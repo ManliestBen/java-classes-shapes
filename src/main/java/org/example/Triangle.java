@@ -10,4 +10,16 @@ public class Triangle extends Shape {
         this.side2 = side2;
         this.side3 = side3;
     }
+
+    @Override
+    public double getArea() {
+        double circumference = getCircumference();
+        double semiPerimeter = circumference / 2;
+        return Math.sqrt(semiPerimeter * (semiPerimeter - side1) * (semiPerimeter - side2) * (semiPerimeter - side3));
+    }
+
+    @Override
+    public double getCircumference() {
+        return side1 + side2 + side3;
+    }
 }
